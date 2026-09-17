@@ -78,15 +78,8 @@ function formatCep(value) {
 }
 
 function initFormMasks() {
-  const whatsappInput = document.getElementById('field-whatsapp');
   const portNumberInput = document.getElementById('field-port-number');
   const cepInput = document.getElementById('field-cep');
-
-  if (whatsappInput) {
-    whatsappInput.addEventListener('input', (e) => {
-      e.target.value = formatPhone(e.target.value);
-    });
-  }
 
   if (portNumberInput) {
     portNumberInput.addEventListener('input', (e) => {
@@ -160,7 +153,6 @@ function initFormSubmit() {
     e.preventDefault();
 
     const name = document.getElementById('field-name').value.trim();
-    const whatsapp = document.getElementById('field-whatsapp').value.trim();
     const portNumber = document.getElementById('field-port-number').value.trim();
     const operator = document.getElementById('field-operator').value.trim();
     const chipTypeRadio = document.querySelector('input[name="chip_type"]:checked');
@@ -168,14 +160,8 @@ function initFormSubmit() {
     const cep = document.getElementById('field-cep').value.trim();
 
     // Validação básica
-    if (!name || !whatsapp || !portNumber || !operator || !cep) {
+    if (!name || !portNumber || !operator || !cep) {
       alert('Por favor, preencha todos os campos obrigatórios para prosseguir com sua portabilidade.');
-      return;
-    }
-
-    if (whatsapp.replace(/\D/g, '').length < 10) {
-      alert('Por favor, digite um número de WhatsApp válido com DDD.');
-      document.getElementById('field-whatsapp').focus();
       return;
     }
 
@@ -203,7 +189,6 @@ function initFormSubmit() {
 `Olá, quero fazer minha portabilidade.
 
 Nome: ${name}
-WhatsApp: ${whatsapp}
 Número atual: ${portNumber}
 Operadora atual: ${operator}
 Tipo de chip: ${chipType}
