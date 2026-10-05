@@ -233,4 +233,153 @@ body {
   box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.6);
 }
 
+/* ==========================================================================
+   Blog Editorial & SEO Typography Styles
+   ========================================================================== */
+
+/* Reading Progress Bar */
+.reading-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 999;
+}
+
+.reading-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00E676, #00C853);
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.8);
+  transition: width 0.1s ease-out;
+}
+
+/* Blog Content Typography */
+.article-body {
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.82;
+  color: #D1D5DB;
+}
+
+.article-body p {
+  margin-bottom: 1.6rem;
+}
+
+.article-body h2 {
+  font-size: 1.75rem; /* 28px */
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-top: 2.75rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  scroll-margin-top: 90px;
+}
+
+@media (min-width: 768px) {
+  .article-body h2 {
+    font-size: 2.125rem; /* 34px */
+  }
+}
+
+.article-body h3 {
+  font-size: 1.35rem; /* 21px */
+  font-weight: 700;
+  color: #F3F4F6;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.35;
+  scroll-margin-top: 90px;
+}
+
+.article-body ul, .article-body ol {
+  margin-top: 1rem;
+  margin-bottom: 1.6rem;
+  padding-left: 1.5rem;
+}
+
+.article-body li {
+  margin-bottom: 0.65rem;
+}
+
+.article-body ul li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.article-body ul li::before {
+  content: '•';
+  color: #00E676;
+  font-weight: bold;
+  font-size: 1.25rem;
+  position: absolute;
+  left: -1rem;
+  top: -0.1rem;
+}
+
+.article-body strong {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* Callout Boxes */
+.callout-box {
+  background: rgba(14, 23, 18, 0.85);
+  border-left: 4px solid #00E676;
+  border-radius: 0 1rem 1rem 0;
+  padding: 1.35rem 1.5rem;
+  margin: 2rem 0;
+}
+
+.callout-box.tip {
+  border-left-color: #00E676;
+  background: rgba(0, 230, 118, 0.06);
+}
+
+.callout-box.alert {
+  border-left-color: #F59E0B;
+  background: rgba(245, 158, 11, 0.08);
+}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 49;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #031A0D;
+  font-weight: 800;
+  font-size: 0.875rem;
+  padding: 12px 18px;
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.floating-whatsapp-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 15px 35px -5px rgba(37, 211, 102, 0.7);
+  color: #000;
+}
+
+@media (max-width: 640px) {
+  .floating-whatsapp-btn {
+    bottom: 80px;
+    right: 16px;
+    padding: 12px 16px;
+  }
+  .floating-whatsapp-btn span.label-text {
+    display: none;
+  }
+}
+
+
 
